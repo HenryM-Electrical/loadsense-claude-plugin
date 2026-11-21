@@ -34,6 +34,7 @@ In claude.ai, download `loadsense.plugin` from the latest [release](https://gith
 | interrogate-profiles | Finds which profile each load uses, reads hourly, weekday and monthly factors, overlays and sanity-checks them |
 | change-impact | Snapshots results before and after every edit and charts the delta |
 | tx-scenarios | Transformer rebalancing loop, battery and solar levers, scenario hygiene and comparison |
+| review-load-assessment | Read-only review of every section, group, load, profile, solar and battery in the current scenario; finds possibly missing loads and suggests load types, better profiles or new ones, with findings ranked by severity |
 
 ## Safety
 Claude asks before deleting anything, leaves the Baseline scenario alone unless named, never saves when only reading a profile, and reminds you that results are indicative and must be checked by a competent engineer.

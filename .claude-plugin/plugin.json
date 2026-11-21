@@ -1,8 +1,8 @@
 {
   "name": "loadsense",
   "displayName": "LoadSense",
-  "version": "0.4.1",
-  "description": "Drive LoadSense electrical loading and energy analysis software (loadsense.app) through Claude in Chrome: build load assessments, interrogate occupancy profiles, chart before/after changes, and right-size transformers across scenarios.",
+  "version": "0.5.0",
+  "description": "Drive LoadSense electrical loading and energy analysis software (loadsense.app) through Claude in Chrome: build load assessments, interrogate occupancy profiles, review assessments for missing loads and better profiles, chart before/after changes, and right-size transformers across scenarios.",
   "author": {
     "name": "LoadSense",
     "email": "info@loadsense.app",

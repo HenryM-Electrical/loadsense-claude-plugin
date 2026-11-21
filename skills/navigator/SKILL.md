@@ -1,6 +1,6 @@
 ---
 name: navigator
-description: Core guide for operating LoadSense (loadsense.app) in Claude in Chrome. Use whenever the user mentions LoadSense, a LoadSense project, load assessment, occupancy profile, coincident or diversified demand, Run Analysis, scenarios, revisions, or asks Claude to do anything on loadsense.app. Load this before the workflow skills (build-load-assessment, interrogate-profiles, change-impact, tx-scenarios).
+description: Core guide for operating LoadSense (loadsense.app) in Claude in Chrome. Use whenever the user mentions LoadSense, a LoadSense project, load assessment, occupancy profile, coincident or diversified demand, Run Analysis, scenarios, revisions, or asks Claude to do anything on loadsense.app. Load this before the workflow skills (build-load-assessment, interrogate-profiles, change-impact, tx-scenarios, review-load-assessment).
 ---
 
 # LoadSense Navigator
