@@ -1,6 +1,6 @@
 ---
 name: navigator
-description: "Core guide for operating LoadSense (loadsense.app) in Claude in Chrome. Use whenever the user mentions LoadSense, a LoadSense project, load assessment, occupancy profile, coincident or diversified demand, Run Analysis, scenarios, revisions, or asks Claude to do anything on loadsense.app. Load this before the workflow skills (build-load-assessment, interrogate-profiles, change-impact, tx-scenarios, review-load-assessment)."
+description: "Core guide for operating LoadSense (loadsense.app) in Claude in Chrome. Use whenever the active browser tab is on any loadsense.app page (dashboard, projects, profiles, portfolio, help, sandbox or any other path), even if the request does not name LoadSense, e.g. \"check this page\", \"what's driving the peak here?\". Also use whenever the user mentions LoadSense, a LoadSense project, load assessment, maximum demand, ADMD, occupancy profile, coincident or diversified demand, coincidence factor, Run Analysis, scenario, revision, TX, transformer, substation sizing, solar PV, battery storage or EV load management in a LoadSense context. Load this before the workflow skills (build-load-assessment, review-load-assessment, interrogate-profiles, change-impact, tx-scenarios)."
 ---
 
 # LoadSense Navigator
