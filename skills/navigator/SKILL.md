@@ -46,7 +46,8 @@ Results: Gross (undiversified) → Diversified (group sum with CF) → Coinciden
 | Portfolio | `/portfolio` |
 | Capacity Intelligence | `/capacity-intelligence` |
 | Panel Designer | `/panel-designer` |
-| Help | `/app/help` |
+| Help Centre (signed-in users; short video guides with text step lists) | `/app/help`, a guide opens as `/app/help?guide={slug}` |
+| Sandbox demo (no signup, safe to experiment) | `https://loadsense.app/sandbox/demo` |
 
 Project IDs are not guessable: open `/projects`, type in "Search projects...", then click the card. Note the ID from the URL for reuse in the session.
 
@@ -79,6 +80,12 @@ Detailed element-by-element map: `references/ui-map.md`. Chart recipes: `referen
 2. Go to the project; wait ~3 s for the client-side app to render (blank page = still loading; wait and retry once).
 3. `get_page_text` → record project, scenario, revision, KPI cards, Site Totals.
 4. Tell the user in one line what you found, then proceed.
+
+## When unsure how a feature works
+
+Before guessing at an unfamiliar control, open the Help Centre (`/app/help`), click **Steps** on the matching guide and read the step list with `get_page_text`. Guides: Navigating the Application (getting started), Overview of Project Load Management and Analysis (Presentation tab), Understanding the Portfolio Insights Page, Analysing Load Assessments Using Sections and Groups, Guide to Adding Loads in Project, Guide to Generating a New Occupancy Profile (`?guide=new-occupancy-profile`, includes meter data upload and mapping), Guide to Conducting Load Analysis and Renewable Energy Integration. Follow the guide's steps, not memory.
+
+If the user wants to practise, or has no account, work in the sandbox (`/sandbox/demo`) rather than a live project. If the user needs a human, point them to "Book Technical Support Session" on the Help Centre page.
 
 ## Escalation
 

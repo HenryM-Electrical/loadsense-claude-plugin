@@ -117,3 +117,9 @@ Header: name, "Category • Source". Tabs:
 - **By Month**: "Energy Consumption by Month", Bar/Heatmap. Manual = monthly scaling factors; meter = actual monthly totals.
 - **Export**: "Hourly Diversity Factors" text table (05:00 → 04:00) + **Download CSV**. The only tab with numbers as text.
 Export PDF top right.
+
+## Help Centre `/app/help`
+Title "Help Centre". Search box, sort ("Recommended"), category chips: All, Getting Started, Projects, Occupancy Profiles, Analysis & Renewables, Troubleshooting.
+- **Interactive Sandbox Demo** card → panel with **Open Sandbox** (`/sandbox/demo`) and "Open in new tab". Sandbox covers sections and groups, every load type, duplicate/move/toggle/delete, Run Analysis, Solar PV, Battery, insights, presentation view, PDF reports.
+- Guide cards: title, category, description, duration and step count, **Watch** and **Steps** buttons. Steps opens a text list of numbered steps with timestamps; the URL becomes `/app/help?guide={slug}`; "Copy link" gives a shareable link.
+- **Still Need Help?** card → "Book Technical Support Session" (external booking page).
