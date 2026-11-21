@@ -39,6 +39,13 @@ In claude.ai, download `loadsense.plugin` from the latest [release](https://gith
 ## Safety
 Claude asks before deleting anything, leaves the Baseline scenario alone unless named, never saves when only reading a profile, and reminds you that results are indicative and must be checked by a competent engineer.
 
+## Data and privacy
+- The plugin has no connectors, servers or API keys. Claude operates [loadsense.app](https://loadsense.app) through the Claude in Chrome extension, using your own signed-in session and permissions.
+- Data Claude reads: LoadSense pages you ask it to work on (projects, loads, profiles, results). These can include project, client or contact names.
+- Data Claude sends: anything it enters at your request (loads, profiles, scenarios) is saved to your LoadSense account by loadsense.app, the only external service involved.
+- Retention: data saved to LoadSense is kept with your projects for the life of your account, under the LoadSense [Privacy Policy](https://loadsense.app/privacy) and [Terms of Use](https://loadsense.app/terms).
+- The plugin is intended for professional users aged 18 and over.
+
 ## Links
 - [Using LoadSense with Claude (guide)](https://loadsense.app/blog/using-loadsense-with-claude)
 - [FAQ](https://loadsense.app/faq) · [Contact and support](https://loadsense.app/contact)
