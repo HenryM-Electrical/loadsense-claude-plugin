@@ -42,7 +42,8 @@ Claude asks before deleting anything, leaves the Baseline scenario alone unless 
 ## Data and privacy
 - The plugin has no connectors, servers or API keys. Claude operates [loadsense.app](https://loadsense.app) through the Claude in Chrome extension, using your own signed-in session and permissions.
 - Data Claude reads: LoadSense pages you ask it to work on (projects, loads, profiles, results). These can include project, client or contact names.
-- Data Claude sends: anything it enters at your request (loads, profiles, scenarios) is saved to your LoadSense account by loadsense.app, the only external service involved.
+- Data Claude reads from LoadSense pages is processed by Anthropic as part of your Claude conversation, under your own agreement with Anthropic.
+- Data Claude sends: anything it enters at your request (loads, profiles, scenarios) is saved to your LoadSense account. loadsense.app is the only service the plugin sends data to directly; LoadSense's own processors (for example, AI-assisted meter data analysis) are listed in its [Privacy Policy](https://loadsense.app/privacy).
 - Retention: data saved to LoadSense is kept with your projects for the life of your account, under the LoadSense [Privacy Policy](https://loadsense.app/privacy) and [Terms of Use](https://loadsense.app/terms).
 - The plugin is intended for professional users aged 18 and over.
 
