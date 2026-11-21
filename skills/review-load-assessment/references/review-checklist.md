@@ -5,7 +5,9 @@ Use these lists to prompt questions, not as proof that something is missing. Eve
 ## Red flags at a glance
 - Load with "No profile".
 - Power factor exactly 1.0 on motors, pumps, fans or heat pumps; or every load left at 0.95.
-- Group Coincidence Factor below 1.0 stacked on time-based profiles without a stated reason.
+- A large apartment group left at Group CF 1.0 (a lower CF is usually justified at scale), or a CF well outside 0.8 to 0.9 with no stated reason. (A CF below 1.0 on time-based profiles is normal practice, not double counting.)
+- Apartments modelled as room/area loads rather than the Apartment type.
+- EV held at its Static Bank Limit with Smart override off while the site has import headroom.
 - Heating or cooling profile with flat monthly factors (all 1.00).
 - Binary 0/1 or flat 24 h profiles on loads that clearly vary.
 - The same profile on loads with different operating patterns.

@@ -96,7 +96,7 @@ Client-facing view, no load editor. Switch back to **Analysis** when finished.
 - Monthly Energy Breakdown: stacked bars Base Load / Heating / Cooling / Solar Generation / Battery Discharge; **Split** / **Net** toggle; Copy chart as image.
 - Collapsible **EV Load Management ({n} chargers)**: chargers, charger rating, load management mode (e.g. Fair Share), Static Bank Limit (A and kW), Peak EV Demand, "Smart override" flag, 24-hour EV chart, and a text **Hourly Breakdown** table (Hour / Active / Demand kW / EV Charging kW/ch).
 - Collapsible **3D Energy Flow Visualisation**.
-- Known quirk (21 Nov 2026): on one project Presentation showed Coincident 554.0 kW "after battery storage" while Analysis showed 449.7 kW (Insights: battery shaves 554 → 450). Quote the Analysis figure and mention the mismatch if Presentation is used for reporting.
+- The Coincident Demand card states its basis under the label (e.g. "Gross design basis · December"). Quote that basis with the number; a gross-basis figure is before battery adjustment, so it can differ from the after-battery coincident figure in Analysis.
 
 ## Occupancy profile library `/profile` (dashboard)
 Header: **Add Templates**, **Import Meter Data**, **New Profile**. Search "Search profiles...". Category filter: All categories, Uncategorised, Education, Healthcare, Hospitality, Industrial, Large Residential, Mixed Use, Office, Other, Parks & Leisure, Residential, School, Transport.
@@ -123,3 +123,8 @@ Title "Help Centre". Search box, sort ("Recommended"), category chips: All, Gett
 - **Interactive Sandbox Demo** card → panel with **Open Sandbox** (`/sandbox/demo`) and "Open in new tab". Sandbox covers sections and groups, every load type, duplicate/move/toggle/delete, Run Analysis, Solar PV, Battery, insights, presentation view, PDF reports.
 - Guide cards: title, category, description, duration and step count, **Watch** and **Steps** buttons. Steps opens a text list of numbered steps with timestamps; the URL becomes `/app/help?guide={slug}`; "Copy link" gives a shareable link.
 - **Still Need Help?** card → "Book Technical Support Session" (external booking page).
+
+## Metrics that differ by design (not errors)
+- **Solar share**: Insights gives the reduction in demand on a typical day (e.g. 5%); Presentation's Solar Utilisation gives the share of total annual site consumption met by solar (e.g. 14.5%). Different measures; do not report them as inconsistent.
+- **Coincident demand**: gross design basis (before battery) vs after battery storage. Always quote which basis.
+- **Demand Reduction** (Presentation): diversified vs total demand, not a battery or solar effect.

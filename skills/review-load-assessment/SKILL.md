@@ -33,12 +33,15 @@ Work through `references/review-checklist.md`. Typical checks:
 - Phase setting appropriate.
 
 **Groups**
-- Group Coincidence Factor: present, justified, and not double-counting diversity already in the profiles. A CF below 1.0 on top of time-based profiles needs a stated reason.
+- Group Coincidence Factor is part of the Engineered Diversity Method: time-based profiles show how each load is used through the day; the CF reflects the chance of everything peaking at exactly the same moment across a project of scale. Do NOT flag a CF below 1.0 on time-based profiles as double counting.
+- Typical CF 0.8 to 0.9. Only raise a CF as a low-severity "Confirm" if it sits well outside that range without an obvious reason, or if a group with many apartments is left at 1.0 (a lower CF is usually justified at scale).
 - Groups mirror real buildings, floors or tenancies; no loads parked in the wrong group or section.
 
 **Loads**
-- Right load **type** for the plant (area-based vs discrete vs heating/cooling vs EV). Example: a heat pump entered as a discrete kW without its thermal/COP basis; a kitchen entered as W/m².
-- Inputs plausible: areas consistent with the schedule, W/m² sensible for the use, quantities, ratings, power factor (flag every 1.0 or default 0.95 on motor-heavy plant).
+- Right load **type** for the plant (area-based vs apartment vs discrete vs heating/cooling vs EV). Examples: apartments modelled as room/area loads instead of the Apartment type; a heat pump entered as a discrete kW without its thermal/COP basis; a kitchen entered as W/m².
+- Inputs plausible: areas consistent with the schedule, quantities, ratings, power factor (flag every 1.0 or default 0.95 on motor-heavy plant).
+- Power density: judge it in context. Before calling a W/m² low, establish where heating, DHW and cooling are carried. Apartment small power and lighting of 10 to 15 W/m² is normal for Passivhaus-standard dwellings when heating sits in a communal ASHP or elsewhere; the old 3 kW-per-apartment rule of thumb is itself on the high side. Only flag low density if the space is meant to be electrically heated locally and no other load carries that heat.
+- Equipment parameters (COP, efficiencies, ratings, charger kW): if a value is plausible, do not propose a different number. Raise it as "Confirm" (e.g. "Winter COP 3.0 assumed: confirm against the selected unit") and only suggest an alternative when the value is clearly outside a credible range.
 - Duplicates (two loads with the same name or identical inputs), placeholders ("Load 1", round numbers that look unconfirmed), and zero or near-zero loads.
 - Each load has a profile. "No profile" = flat full load; flag unless intentional.
 
@@ -54,6 +57,11 @@ Work through `references/review-checklist.md`. Typical checks:
 - Scope (whole site, section or group) matches where the array is physically connected.
 - Size, orientation, tilt, shading and performance ratio plausible; location region right for the site.
 - Annual yield (kWh/kWp) sensible for the region; peak generation hour vs the demand peak hour (PV rarely helps an evening peak).
+
+**EV charging**
+- Load management mode, Static Bank Limit, import headroom and the **Smart override** state (EV Load Management panel in Presentation mode, and the EV load's settings).
+- Compare Peak EV Demand with the Static Bank Limit. If EV demand is held at the static limit while the site has import headroom, flag that EV may be under-represented and suggest enabling Smart override (EV can exceed the static limit, but only within the import limit) and/or reviewing the import limit against the site peak.
+- Note where the EV profile sits at its peak but load management dispatches near 0 kW at that hour: say what that relies on.
 
 **Battery storage**
 - Scope matches where the battery is connected; a battery on one section cannot relieve another.
@@ -79,7 +87,7 @@ Then:
 | # | Severity | Level | Item | Finding | Suggested action | Likely effect on peak |
 |---|---|---|---|---|---|---|
 
-Severity: **High** = could change plant or supply sizing, or a safety load missing. **Medium** = wrong profile or type that shifts the peak hour or magnitude. **Low** = tidy-up, naming, documentation.
+Severity: **High** = could change plant or supply sizing, or a safety load missing. **Medium** = wrong profile or type that shifts the peak hour or magnitude. **Low** = tidy-up, naming, documentation. **Confirm** = a plausible assumption the engineer should verify (COP, ratings, CF choice); state the value used and what to confirm it against, without proposing a replacement.
 "Likely effect" is directional (up, down, shifts later) unless estimated from design kW × profile factor at the peak hour; say which.
 
 2. **Profile suggestions**: for each, the load, current profile, proposed library profile (by name and ID) or "new profile needed". For a new profile, propose 24 hourly factors plus weekday and monthly factors and draw them against the current profile (chart Pattern A).
@@ -99,4 +107,6 @@ Close with options, not a single instruction: apply all high-severity fixes in a
 ## Guardrails
 - Read-only until approved. Never delete; suggest disabling instead.
 - Do not present benchmarks from memory as fact. Use LoadSense's Portfolio Benchmark, the user's own figures, or label a value as "typical, to be confirmed".
+- Defer to the Engineered Diversity Method and the engineer's stated design basis. Challenge only where the evidence in the project contradicts itself.
+- Before reporting two figures as inconsistent, check whether they measure different things (see "Metrics that differ by design" in `navigator/references/ui-map.md`).
 - Results remain indicative and must be checked by a competent engineer.

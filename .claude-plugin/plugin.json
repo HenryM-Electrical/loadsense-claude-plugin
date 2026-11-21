@@ -1,7 +1,7 @@
 {
   "name": "loadsense",
   "displayName": "LoadSense",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Drive LoadSense electrical loading and energy analysis software (loadsense.app) through Claude in Chrome: build load assessments, interrogate occupancy profiles, review assessments for missing loads and better profiles, chart before/after changes, and right-size transformers across scenarios.",
   "author": {
     "name": "LoadSense",
@@ -11,7 +11,7 @@
   "homepage": "https://loadsense.app",
   "license": "MIT",
   "icon": "./logo.png",
-  "documentationUrl": "https://loadsense.app/faq",
+  "documentationUrl": "https://loadsense.app/blog/using-loadsense-with-claude",
   "supportUrl": "https://loadsense.app/contact",
   "privacyPolicyUrl": "https://loadsense.app/privacy",
   "termsOfServiceUrl": "https://loadsense.app/terms",

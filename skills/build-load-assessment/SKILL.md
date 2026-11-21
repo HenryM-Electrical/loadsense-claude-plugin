@@ -13,10 +13,29 @@ Turn the brief into a structure table and show it to the user in one message:
 | Section (supply/TX) | Group (building/area) | Load | Type | Inputs | Occupancy profile | Group CF |
 |---|---|---|---|---|---|---|
 
-- Type: area-based (m², lighting W/m², small power W/m²), discrete (qty × kW), heating (kW thermal), cooling, EV (chargers × kW), etc.
+- Type: always use the most specific LoadSense load type for the plant (see "Load type mapping" below). Generic area-based (room) loads are for spaces with no dedicated type.
+- Coincidence factors: follow the Engineered Diversity Method. Time-based profiles describe WHEN a load is used through the day; the Group Coincidence Factor describes the chance of those loads peaking at exactly the same moment across a project of scale. The two are complementary, not double counting. Typical Group CF 0.8 to 0.9; lower for groups with many apartments, where simultaneous occupancy at scale is less likely. Use the user's stated CF where given.
 - Profile: pick from the library by name. Search `/profile` for candidates; if nothing fits, propose a new profile (ask before creating).
-- Flag every assumption (benchmarks, power factor default 0.95, CFs) clearly as an assumption.
+- Flag every assumption (benchmarks, power factor default 0.95, CFs, COPs, EV limits) clearly as an assumption.
 - Ask one question if a genuinely blocking input is missing; otherwise proceed with labelled assumptions.
+
+### Load type mapping
+| Plant or space | LoadSense load type |
+|---|---|
+| Dwellings / apartments | **Apartment** type (never a room/area load). Small power and lighting density per the brief; 10 to 15 W/m² is typical for Passivhaus-standard apartments where heating sits elsewhere (e.g. a communal ASHP). |
+| Offices, retail, general spaces | Area-based (room) load: floor area, lighting W/m², small power W/m² |
+| Heat pumps, boilers, electric heating | Heating load (thermal kW, with COP for heat pumps) |
+| Chillers, VRF cooling | Cooling load |
+| EV chargers | EV load (chargers × rating), with load management set (below) |
+| Kitchens, lifts, pumps, process plant | Discrete load (qty × kW) |
+
+Before entering, read the Add Load form's type options with `read_page` and use the exact names offered; if a type above is not offered, use the closest and say so.
+
+### EV load management
+When an EV load has a Static Bank Limit and import headroom:
+- Set the load management mode the brief asks for (e.g. Fair Share).
+- Enable **Smart override** where the site has import headroom, unless the brief says otherwise. Smart override lets EV charging exceed the static bank limit, but only within the site import limit. Without it, EV demand is capped at the static limit and can be under-represented.
+- Afterwards, check the EV Load Management panel (Presentation mode): Peak EV Demand vs Static Bank Limit, "Smart override on", and the hourly breakdown, and report them.
 
 ## 2. Create or open the project
 - Existing project: `/projects` → search → open.

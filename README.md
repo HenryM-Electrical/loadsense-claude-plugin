@@ -40,6 +40,7 @@ In claude.ai, download `loadsense.plugin` from the latest [release](https://gith
 Claude asks before deleting anything, leaves the Baseline scenario alone unless named, never saves when only reading a profile, and reminds you that results are indicative and must be checked by a competent engineer.
 
 ## Links
+- [Using LoadSense with Claude (guide)](https://loadsense.app/blog/using-loadsense-with-claude)
 - [FAQ](https://loadsense.app/faq) · [Contact and support](https://loadsense.app/contact)
 - [Disclaimer](https://loadsense.app/disclaimer) · [Terms of Use](https://loadsense.app/terms) · [Privacy Policy](https://loadsense.app/privacy)
 
