@@ -44,7 +44,7 @@ Claude asks before deleting anything, leaves the Baseline scenario alone unless 
 - Data Claude reads: LoadSense pages you ask it to work on (projects, loads, profiles, results). These can include project, client or contact names.
 - Data Claude reads from LoadSense pages is processed by Anthropic as part of your Claude conversation, under your own agreement with Anthropic.
 - Data Claude sends: anything it enters at your request (loads, profiles, scenarios) is saved to your LoadSense account. loadsense.app is the only service the plugin sends data to directly; LoadSense's own processors (for example, AI-assisted meter data analysis) are listed in its [Privacy Policy](https://loadsense.app/privacy).
-- Retention: data saved to LoadSense is kept with your projects for the life of your account, under the LoadSense [Privacy Policy](https://loadsense.app/privacy) and [Terms of Use](https://loadsense.app/terms).
+- Retention: project data is kept while your LoadSense account is active and permanently deleted 30 days after account deletion, as set out in the LoadSense [Privacy Policy](https://loadsense.app/privacy) and [Terms of Use](https://loadsense.app/terms).
 - The plugin is intended for professional users aged 18 and over.
 
 ## Links
