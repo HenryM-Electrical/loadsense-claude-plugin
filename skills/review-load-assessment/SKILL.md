@@ -1,6 +1,6 @@
 ---
 name: review-load-assessment
-description: Carries out a thorough engineering review of a LoadSense load assessment in the current scenario: every section, group and load, occupancy profiles, solar PV and battery storage, plus a hunt for missing loads. Produces a findings report with suggested load types, better-fitting profiles or new profiles. Use when the user says "review this load assessment", "check my loads", "audit the project", "what have I missed", "sense-check the assessment", "QA this before issue", or asks whether the profiles or load types are right.
+description: "Carries out a thorough engineering review of a LoadSense load assessment in the current scenario: every section, group and load, occupancy profiles, solar PV and battery storage, plus a hunt for missing loads. Produces a findings report with suggested load types, better-fitting profiles or new profiles. Use when the user says \"review this load assessment\", \"check my loads\", \"audit the project\", \"what have I missed\", \"sense-check the assessment\", \"QA this before issue\", or asks whether the profiles or load types are right."
 ---
 
 # Review a load assessment

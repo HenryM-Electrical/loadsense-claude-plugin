@@ -1,6 +1,6 @@
 ---
 name: change-impact
-description: Captures LoadSense results before and after any edit and charts the difference inline. Use whenever Claude changes a load, profile, coincidence factor, solar, battery or scenario in LoadSense, or when the user asks "what did that change", "show me the before and after", "what's the impact of", or "how much headroom do we gain".
+description: "Captures LoadSense results before and after any edit and charts the difference inline. Use whenever Claude changes a load, profile, coincidence factor, solar, battery or scenario in LoadSense, or when the user asks \"what did that change\", \"show me the before and after\", \"what's the impact of\", or \"how much headroom do we gain\"."
 ---
 
 # Before/after change impact

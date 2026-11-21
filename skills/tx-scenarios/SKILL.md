@@ -1,6 +1,6 @@
 ---
 name: tx-scenarios
-description: Rebalances loads between transformers (sections) and manages and compares scenarios in LoadSense. Use when the user mentions TX rebalancing, moving loads to the new or existing transformer, an interim supply limit, kVA headroom, substation sizing, creating or switching scenarios, or comparing scenarios.
+description: "Rebalances loads between transformers (sections) and manages and compares scenarios in LoadSense. Use when the user mentions TX rebalancing, moving loads to the new or existing transformer, an interim supply limit, kVA headroom, substation sizing, creating or switching scenarios, or comparing scenarios."
 ---
 
 # Transformer rebalancing and scenarios

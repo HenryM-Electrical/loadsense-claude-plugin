@@ -1,6 +1,6 @@
 ---
 name: interrogate-profiles
-description: Reads, compares and charts LoadSense occupancy profiles and checks whether the right profile is applied to each load. Use when the user asks "what profile is X using", "compare these profiles", "show me the heating profile", "is this profile right", "which loads drive the peak", or wants a profile drafted or adjusted.
+description: "Reads, compares and charts LoadSense occupancy profiles and checks whether the right profile is applied to each load. Use when the user asks \"what profile is X using\", \"compare these profiles\", \"show me the heating profile\", \"is this profile right\", \"which loads drive the peak\", or wants a profile drafted or adjusted."
 ---
 
 # Interrogate occupancy profiles

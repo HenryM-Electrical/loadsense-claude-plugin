@@ -1,6 +1,6 @@
 ---
 name: build-load-assessment
-description: Builds or extends a load assessment in LoadSense from a brief, schedule, drawing notes or spreadsheet. Use when the user says "build a load assessment", "set up the loads for", "add these loads to LoadSense", "create a new LoadSense project", or pastes a load schedule to enter.
+description: "Builds or extends a load assessment in LoadSense from a brief, schedule, drawing notes or spreadsheet. Use when the user says \"build a load assessment\", \"set up the loads for\", \"add these loads to LoadSense\", \"create a new LoadSense project\", or pastes a load schedule to enter."
 ---
 
 # Build a load assessment in LoadSense
