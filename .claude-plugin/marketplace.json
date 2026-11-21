@@ -1,0 +1,15 @@
+{
+  "name": "loadsense",
+  "description": "Official LoadSense plugins for Claude",
+  "owner": {
+    "name": "LoadSense",
+    "email": "info@loadsense.app"
+  },
+  "plugins": [
+    {
+      "name": "loadsense",
+      "source": "./",
+      "description": "Drive LoadSense through Claude in Chrome: load assessments, profile interrogation, before/after charts and transformer rebalancing."
+    }
+  ]
+}
