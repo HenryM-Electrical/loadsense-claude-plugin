@@ -78,6 +78,13 @@ Using the building type, compare the inventory against the typical load list in 
 - Future-proofing allowances (EV passive provision, heat pump conversion, spare ways) where the brief implies them.
 List each as "Possibly missing" with the reason; never assume it is missing for certain.
 
+## 3a. Evidence rules for findings
+- **Read before naming.** A load may only appear in a finding once you have read its profile name and its factor at the relevant peak hour. Never call a load "flat", "peaky" or "unprofiled" without opening it.
+- **Contribution is calculated.** "Drives the peak" claims use design kW × profile factor at the section's peak hour × group CF, never a group or load card figure (cards show each item's own worst case).
+- **Spare capacity.** Read the Spare Capacity % and state whether section and transformer figures include it; compare with supply limits without it.
+- **EV.** Describe EV demand from the EV Load Management Hourly Breakdown, not the card or profile alone; "No profile" on EV is engine-dispatched, not flat full load.
+- **Generic profile reuse.** Always report the same generic library profile applied to loads with clearly different operating patterns (e.g. one restaurant profile on several different kitchens) as a finding, with a suggested split.
+
 ## 4. Report
 Lead with the verdict in one line, e.g. "12 findings: 3 high, 5 medium, 4 low. Coincident demand likely understated by the missing kitchen extract and lift loads."
 

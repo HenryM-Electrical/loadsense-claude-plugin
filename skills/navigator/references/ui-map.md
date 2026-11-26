@@ -128,3 +128,18 @@ Title "Help Centre". Search box, sort ("Recommended"), category chips: All, Gett
 - **Solar share**: Insights gives the reduction in demand on a typical day (e.g. 5%); Presentation's Solar Utilisation gives the share of total annual site consumption met by solar (e.g. 14.5%). Different measures; do not report them as inconsistent.
 - **Coincident demand**: gross design basis (before battery) vs after battery storage. Always quote which basis.
 - **Demand Reduction** (Presentation): diversified vs total demand, not a battery or solar effect.
+
+## What the cards and charts actually show
+- **Group and load cards** show each item's own worst-case demand (its own peak hour and month), NOT its contribution at the site or section peak. The page notes this under the Presentation charts. Never read a card figure as a share of the peak; use the formula in the navigator skill.
+- **Section hourly demand** is only shown in the 24-Hour Demand Profile chart: select the section, then hover each hour for the tooltip value. Record values in a table as you go.
+- **Spare capacity**: the Spare Capacity % in Site Totals can be carried into transformer and substation figures. Check it before any comparison with a supply limit.
+
+## EV load management engine
+- With load management (e.g. Fair Share) and an import limit, the engine fills spare capacity up to the **import limit minus the reserve**. A section can therefore sit exactly at that cap: the cap, not the EV profile, sets the peak.
+- Consequences: changing the EV profile may not lower the section peak, and can raise the site total by shifting charging into other hours. Test, do not assume.
+- What EV actually draws each hour is in the engine's **Hourly Breakdown** table (Presentation → EV Load Management), not the EV group card.
+- "No profile" on an EV load is NOT a flat full load as it is for other load types; the engine dispatches it. Read the Hourly Breakdown before describing it.
+- Smart override lets EV exceed the Static Bank Limit, but only within the import limit.
+
+## Practical notes
+- After creating or editing a profile, **reload the project page** before assigning it; otherwise the new profile is missing from the Occupancy Profile dropdown.

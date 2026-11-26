@@ -35,5 +35,6 @@ Load `navigator` first.
   - Wizard: Details (name, category) → Daily → Weekly → Monthly → **Save Changes**.
   - Daily: expand **Enter hourly values** and fill the 24 inputs `daily occupancy at 00:00` … `23:00` with `form_input`. Weekly and Monthly take typed values too.
   - After saving, open the profile's Export tab and confirm the 24 factors match the agreed values exactly; report any mismatch.
+  - Then **reload the project page** before assigning the new profile; it will not appear in the Occupancy Profile dropdown until you do.
   - Alternative for precise curves: **Import Meter Data** with a CSV, if the user has one.
 - Never edit a shared library profile used by other projects without asking; duplicate it instead.

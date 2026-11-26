@@ -19,6 +19,27 @@ LoadSense is electrical loading and energy analysis software implementing the En
 8. **Always visualise the change.** After an edit or profile query, render a compact inline chart (see `references/chart-patterns.md`).
 9. **Use LoadSense vocabulary**: "right-size" not "optimise"; feature names exactly as shown in the UI. British English.
 10. Results are indicative and must be checked by a competent engineer; never present them as signed-off design.
+11. **Evidence before claims.** A number on the page is not a load's contribution to the peak until you have worked it out (see "Reading results correctly"). Group and load cards show each item's OWN worst case, not its share of the site or section peak.
+12. **Read the profile before naming a load.** Never describe how a load behaves (flat, peaky, off-peak) or call it a cause of anything until you have read its profile name and its factor at the relevant peak hour.
+13. **State the basis.** Before comparing any figure with a supply or transformer limit, read the Spare Capacity setting and say whether the figure includes it. Compare against the supply company's limits WITHOUT spare.
+14. **Measured, not assumed.** Any saving over about 10 kVA that you recommend must have been calculated (rule 11) and tested in a duplicated scenario (see `change-impact`, "Verify a saving"). Say which.
+
+## Reading results correctly
+
+**A load's share of a peak** (the only figure that may be called its contribution):
+
+```
+share at peak (kW) = design kW × profile factor at the section's peak hour × the group's coincidence factor
+```
+1. Find the section's peak hour first (hover the section's 24-hour chart, or Grid Capacity Negotiator time bands).
+2. Read the load's profile factor AT THAT HOUR (`/profile/{id}` → Export).
+3. Multiply by the group's coincidence factor (if enabled).
+4. kVA = kW ÷ power factor.
+Rank causes of a peak only on this figure. A large group card can contribute little if its own peak falls at another hour.
+
+**Spare capacity**: Site Totals and transformer sizing can include the Spare Capacity % (e.g. 25%). Read it, state "including X% spare" or "excluding spare", and strip it out before comparing with a DNO or supply limit.
+
+**EV load management** behaves differently from other loads; see `references/ui-map.md` → "EV load management engine" before saying anything about EV demand.
 
 ## Model of a project
 
@@ -67,6 +88,9 @@ Project IDs are not guessable: open `/projects`, type in "Search projects...", t
 | Battery performance | Battery tab → "Battery Summary" text (daily cycles, peak shaving kW and %) |
 | Hourly EV demand | Presentation mode → expand "EV Load Management" → "Hourly Breakdown" text table |
 | All four series at one hour | Presentation 24-Hour Demand Profile → hover the hour (tooltip) |
+| Hourly demand for one section | 24-Hour Demand Profile → set the selector to that section → hover each hour and read the tooltip (standard method until the app shows section hourly figures as text) |
+| What EV actually draws each hour | Presentation → EV Load Management → "Hourly Breakdown" table (not the EV group card) |
+| Spare capacity basis | Site Totals → "Spare Capacity" % field |
 | Profile weekly/monthly factors | `/profile` → card kebab → Edit Profile → Next through Daily (Enter hourly values), Weekly and Monthly, read the inputs → **Cancel** |
 | Browse profiles by ID | `/profile` (wait ~3 s) → cards are links `/profile/{id}`, newest first |
 

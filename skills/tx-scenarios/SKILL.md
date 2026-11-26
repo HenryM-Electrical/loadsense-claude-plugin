@@ -7,6 +7,14 @@ description: "Rebalances loads between transformers (sections) and manages and c
 
 Load `navigator` and `change-impact` first.
 
+## 0. Ask first (one round, multiple choice)
+Before proposing any rebalancing, ask these together in ONE multiple-choice question set (AskUserQuestion where available), offering the options you can see on the page:
+1. Which buildings or groups **cannot move** between transformers, and which loads **cannot be capped** or switched off?
+2. Which scenario has which limit (e.g. interim and final supply limits, in kVA)?
+3. Should changes apply to **one scenario or several**?
+4. Should figures **include spare capacity**, or be compared without it?
+Do not recommend a move or cap that the answers rule out.
+
 ## Scenario hygiene
 1. Open **Scenarios**; read the list (`read_page` on the dialog). The button label is the active scenario.
 2. Working scenario:
@@ -16,9 +24,14 @@ Load `navigator` and `change-impact` first.
 3. Never delete a scenario without explicit confirmation naming it.
 
 ## Rebalancing loop
-1. Snapshot (per `change-impact`), including each section's peak kVA from Grid Capacity Negotiator and the user's limit for each TX (ask if not known).
+1. Snapshot (per `change-impact`), including each section's peak kVA and peak HOUR from Grid Capacity Negotiator, the Spare Capacity % (and whether the figures include it), and the user's limit for each TX from step 0. Compare with limits excluding spare unless told otherwise.
 2. Chart Pattern D: sections vs capacity. State the gap.
-3. Rank candidate moves: for each group/load on the overloaded section, estimate its contribution at that section's peak hour (design kW × profile factor at peak). Present the top 3 options with the estimated kVA relief and any knock-on to the receiving section's peak.
+3. Rank candidate moves on calculated share, never on card figures:
+   - For each load on the overloaded section, read its profile name and factor at that section's peak hour, then calculate **design kW × profile factor at peak hour × group CF** (÷ PF for kVA). Group cards show each group's own worst case, not its share.
+   - EV loads: read the EV Load Management Hourly Breakdown at the peak hour instead; if the section sits at the import limit minus reserve, the engine is filling headroom and moving or reprofiling other loads may not lower the peak (see navigator ui-map).
+   - Exclude anything step 0 ruled out.
+   - Present the top 3 options with the calculated kVA relief and the knock-on to the receiving section at ITS peak hour.
+3a. **Verify before recommending.** For any option worth more than about 10 kVA: in a duplicated scenario, switch the load(s) off (`Disable load: {name}`), Run Analysis, record the section peak, then switch them back on and Run Analysis again. Report the measured relief beside the calculated one; only report savings measured or calculated this way.
 4. On approval, move with `Move load to a different group: {load}` on the load row (or change the load's **Group** combobox to "Target Section → Group"). For a whole group, move each load or use the group kebab if it offers a move.
 5. Run Analysis, re-snapshot, chart Pattern C + D, report headroom per section.
 6. Repeat until both sections are within limit or the user stops. Keep the running log table.

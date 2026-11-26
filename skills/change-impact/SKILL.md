@@ -31,6 +31,17 @@ Same fields as step 1.
 - One or two sentences on why: which load or hour moved.
 - Offer the next lever as options (e.g. adjust CF, shift a profile, move a group to the other TX, add battery).
 
+## Verify a saving
+Before recommending any change expected to save more than about 10 kVA:
+1. Work in a duplicated scenario (never Baseline or the favourite).
+2. Calculate the expected relief: design kW × profile factor at the section's peak hour × group CF (÷ PF for kVA).
+3. Switch the load(s) off (`Disable load: {name}`), Run Analysis, record the section and site peak.
+4. Switch them back on, Run Analysis, confirm the results return to the snapshot.
+5. Report both the calculated and measured relief, and say which is which. A saving that is neither calculated nor measured must not be reported.
+
+## Stating the basis
+Every reported figure says whether it includes spare capacity, and whether coincident demand is before or after battery.
+
 ## Stacking changes
 When the user iterates, keep a running log:
 
